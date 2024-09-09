@@ -6,31 +6,30 @@ This project aims to develop a simple website using docker to create containers 
 
 ## **Project Structure**
 ```plaintext
-Crypto_Picker_Website/
-├── backend/                   #
-│   ├── src/                   #
-│   │   └── mysite/            #
-│   │       ├── __init__.py    # 
-│   │       └── main.py        # 
-│   ├── .env                   # 
-│   ├── Dockerfile             #
-│   ├── pyproject.toml         #
-│   └── requirements.txt       #
+Security_Picker_Website/
 │
-├── frontend/                  #
-│   ├── static/                # 
-│   │   └── mysite/            #
-│   └── Dockerfile             #
+├── mongo-express/             # 
+│   └── .env                   # Defines environmental variables for mongo-express
 │
-├── mongo-express/             #
-│   └── .env                   # 
+├── mongodb/                   # 
+│   └── .env                   # Defines environmental variables for mongodb
 │
-├── mongodb/                   #
-│   └── .env                   #
+├── security_picker_app/       # Used to define the security_picker_app_image and it execution
+│   ├── src/                   # Stores all executable code
+│   │   ├── __init__.py        # ???
+│   │   └── main.py            # Defines the main operation of the security picker app
+│   │
+│   ├── static/                # Stores all static contents for the app
+│   │   └── index.html         # HTML for the index page
+│   │
+│   ├── .env                   # Defines environmental variables for security_picker_app
+│   ├── Dockerfile             # Specifies how the docker should create the security_picker_app_image
+│   ├── pyproject.toml         # ???
+│   └── requirements.txt       # stores the installment requirements for Docker to install
 │
-├── .gitignore                 # 
-├── docker-compose.yml         # 
-├── LICENSE                    #
+├── .gitignore                 # Indicates the files that should be ignored by git
+├── docker-compose.yml         # Specifies how "docker compose up" should run
+├── LICENSE                    # The project's license
 └── README.md                  # Project overview and setup instructions
 ```
 

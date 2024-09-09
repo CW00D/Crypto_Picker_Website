@@ -31,4 +31,4 @@ services:
       - ./mongo-express/.env
 
 volumes:
-  mongodb-data: 
+  mongodb-data:
