@@ -16,7 +16,6 @@ Security_Picker_Website/
 │
 ├── security_picker_app/       # Used to define the security_picker_app_image and it execution
 │   ├── src/                   # Stores all executable code
-│   │   ├── __init__.py        # ???
 │   │   └── main.py            # Defines the main operation of the security picker app
 │   │
 │   ├── static/                # Stores all static contents for the app
@@ -24,7 +23,7 @@ Security_Picker_Website/
 │   │
 │   ├── .env                   # Defines environmental variables for security_picker_app
 │   ├── Dockerfile             # Specifies how the docker should create the security_picker_app_image
-│   ├── pyproject.toml         # ???
+│   ├── pyproject.toml         # Used to setup security_picker_app wheel
 │   └── requirements.txt       # stores the installment requirements for Docker to install
 │
 ├── .gitignore                 # Indicates the files that should be ignored by git
