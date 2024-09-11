@@ -38,37 +38,3 @@ def login():
         except:
             error = "Server error!"
     return render_template('login.html', error=error)
-
-
-@app.route("/index", methods=['POST', 'GET'])
-def index():
-    feedbackMessage = "Messages sent!"
-    if session.get('logged_in') == 1:
-        try:
-            if request.method == 'GET':
-                configFile = open("config.json")
-                configurations = json.load(configFile)
-                amq_ip = configurations['amq']['ip'] + \
-                    ":" + configurations['amq']['port']
-                wmq_ip = configurations['wmq']['ip'] + \
-                    ":" + configurations['wmq']['port']
-                file_path = configurations['file']['file_path']
-                return render_template('index.html', amq_ip=amq_ip, wmq_ip=wmq_ip, file_path=file_path)
-
-            elif request.method == 'POST':
-                cleanMessages()
-                params = extractParamsFromRequest(request.form)
-                for messageType in params:
-                    try:
-                        executor(
-                            messageType, params[messageType], params[messageType]["count"], request.form["queryType"])
-                    except Exception as e:
-                        feedbackMessage = e
-                return render_template('index.html', message=feedbackMessage)
-            
-        except Exception as e:
-            session.pop("logged_in")
-            print(e)
-            return e
-    else:
-        return redirect(url_for('.login'))
