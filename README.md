@@ -15,11 +15,12 @@ Security_Picker_Website/
 │   └── .env                   # Defines environmental variables for mongodb
 │
 ├── security_picker_app/       # Used to define the security_picker_app_image and it execution
-│   ├── src/                   # Stores all executable code
-│   │   └── main.py            # Defines the main operation of the security picker app
-│   │
-│   ├── static/                # Stores all static contents for the app
-│   │   └── index.html         # HTML for the index page
+│   ├── src/                   # Stores src for the security_picker_app
+│   │   ├── app/               # Stores all executable code
+│   │   │    └── main.py       # Defines the main operation of the security picker app
+│   │   │
+│   │   └── static/            # Stores all static contents for the app
+│   │       └── index.html     # HTML for the index page
 │   │
 │   ├── .env                   # Defines environmental variables for security_picker_app
 │   ├── Dockerfile             # Specifies how the docker should create the security_picker_app_image
